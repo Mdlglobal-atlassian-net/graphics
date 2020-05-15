@@ -21,11 +21,11 @@ limitations under the License.
 namespace {
 
 const std::string kEmptyShaderCode =
-    "#version 460\n"
+    "#version 300\n"
     "void main() { }\n";
 
 const std::string geometry_shader_code =
-    "#version 460\n"
+    "#version 300\n"
     "\n"
     "uniform mat4 view_projection_matrix;\n"
     "\n"
@@ -44,7 +44,7 @@ TEST(ProgramTest, TestCompileInvalidShader) {
   std::unique_ptr<EGLOffscreenContext> context;
   std::unique_ptr<gl_utils::Program> program;
   const std::string kInvalidShaderCode =
-      "#version 460\n"
+      "#version 300\n"
       "uniform mat4 view_projection_matrix;\n"
       "void main() { syntax_error }\n";
 
@@ -63,7 +63,7 @@ TEST(ProgramTest, TestCompileInvalidShaderType) {
   std::unique_ptr<EGLOffscreenContext> context;
   std::unique_ptr<gl_utils::Program> program;
   const std::string kInvalidShaderCode =
-      "#version 460\n"
+      "#version 300\n"
       "void main() { syntax_error }\n";
 
   TF_ASSERT_OK(EGLOffscreenContext::Create(&context));

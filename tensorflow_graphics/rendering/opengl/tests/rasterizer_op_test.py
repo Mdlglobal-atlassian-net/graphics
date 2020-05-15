@@ -28,14 +28,14 @@ from tensorflow_graphics.util import test_case
 
 # Empty vertex shader
 test_vertex_shader = """
-#version 460
+#version 300
 void main() { }
 """
 
 # Geometry shader that projects the vertices of visible triangles onto the image
 # plane.
 test_geometry_shader = """
-#version 460
+#version 300
 
 uniform mat4 view_projection_matrix;
 
@@ -213,7 +213,7 @@ class RasterizerOPTest(test_case.TestCase):
                                    error_graph_mode):
     height = 1
     width = 1
-    empty_shader_code = "#version 460\n void main() { }\n"
+    empty_shader_code = "#version 300\n void main() { }\n"
     if tf.executing_eagerly():
       error = error_eager
     else:

@@ -27,11 +27,11 @@ limitations under the License.
 namespace {
 
 const std::string kEmptyShaderCode =
-    "#version 460\n"
+    "#version 300\n"
     "void main() { }\n";
 
 const std::string geometry_shader_code =
-    "#version 460\n"
+    "#version 300\n"
     "\n"
     "uniform mat4 view_projection_matrix;\n"
     "\n"
